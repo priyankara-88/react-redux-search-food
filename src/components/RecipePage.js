@@ -2,21 +2,26 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { loadRecipe } from '../redux/recipeAction';
 import RecipeDetails from './RecipeDetails';
+import Error from './ErrorPage';
 
-const RecipePage = ({ match, recipe, loadRecipe }) => {
+const RecipePage = ({ match, error, recipe, loadRecipe }) => {
 
     useEffect(() => { loadRecipe(match.params.id) }, []);
 
     return (
         <div>
-            <RecipeDetails recipe={recipe} />
+            {
+                error ? <Error error={error} />
+                    : <RecipeDetails recipe={recipe} />
+            }
         </div>
     );
 }
 
 const mapStateToProps = state => {
     return {
-        recipe: state.recipe
+        recipe: state.recipe,
+        error: state.error
     }
 }
 

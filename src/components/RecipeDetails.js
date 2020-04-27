@@ -8,7 +8,7 @@ const RecipeDetails = ({ recipe }) => {
                     <article className="card-body p-4">
                         <div>
                             <div>
-                                <img className="img-fluid" src={recipe.image} alt="pic" />
+                                <img className="img-fluid" src={recipe.image ?? 'https://spoonacular.com/recipeImages/103844-556x370.jpg'} alt="pic" />
                             </div>
                         </div>
                         <br />

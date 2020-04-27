@@ -2,8 +2,10 @@ import React from 'react';
 import Recipe from './Recipe'
 
 const RecipiesList = ({ recipies }) => (
-    <div>
-        {recipies.map(recipe => <Recipe key={recipe.id} {...recipe} />)}
+    <div className="container">
+        <div className="row imagetiles">
+            {recipies.map(recipe => <Recipe key={recipe.id} {...recipe} />)}
+        </div>
     </div>
 );
 

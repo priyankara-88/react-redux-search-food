@@ -2,7 +2,8 @@ import * as actionTypes from './recipeActionTypes';
 
 const initialState = {
     recipies: [],
-    recipe: {}
+    recipe: {},
+    error: ''
 };
 
 export default function (state = initialState, action) {
@@ -16,6 +17,14 @@ export default function (state = initialState, action) {
             return Object.assign({}, state, {
                 recipe: action.recipe
             });
+
+        case actionTypes.LOADING_DATA_FAILURE:
+            return Object.assign({}, state, {
+                error: action.error
+            });
+
+        case actionTypes.LOCATION_CHANGED:
+            return Object.assign({}, initialState, {});
 
         default: return state;
     }

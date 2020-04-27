@@ -4,9 +4,14 @@ import * as  recipeActions from '../redux/recipeAction';
 import { bindActionCreators } from 'redux';
 import RecipiesList from './RecipiesList';
 import { debounce } from 'lodash';
+import Error from './ErrorPage';
 
 class RecipiesPage extends React.Component {
     state = { searchText: '' };
+
+    componentDidMount() {
+        this.props.actions.loadRecipies('');
+    }
 
     onStopTypingSearch = debounce(() => {
         this.props.actions.loadRecipies(this.state.searchText);
@@ -33,8 +38,11 @@ class RecipiesPage extends React.Component {
                     </div>
                 </div>
                 <br />
+                {
+                    this.props.error ? <Error error={this.props.error} />
+                        : < RecipiesList recipies={this.props.recipies} />
+                }
 
-                <RecipiesList recipies={this.props.recipies} />
             </div>
         );
     }
@@ -42,7 +50,8 @@ class RecipiesPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        recipies: state.recipies
+        recipies: state.recipies,
+        error: state.error
     }
 }
 
