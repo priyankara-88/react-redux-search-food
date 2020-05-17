@@ -2,10 +2,10 @@
 
 Simple web app which was developed using **React** with capability of searching food by name and list the result
 
-## Functionalties and Technolgies
+### Functionalties and Technolgies
 
 * Application based on **Redux** - state management
-  - Implemented Redux architecture (**Store**, **Actions** and **Reducer**)
+  - Implemented Redux architecture with **Store**, **Actions** and **Reducer**
   - Include **Container components** and **Presentational components**
   - Used **redux-thunk** middleware for data management with server and modify state change
 * Used **axios** for async API calls
