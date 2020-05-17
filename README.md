@@ -1,4 +1,4 @@
-# Food searcher
+# Food Searcher
 
 Simple web app which was developed using React with capability of searching food by name and list the result
 
