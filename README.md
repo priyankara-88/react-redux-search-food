@@ -9,7 +9,7 @@ Simple web app which was developed using **React** with capability of searching 
   - Include **Container components** and **Presentational components**
   - Used **redux-thunk** middleware for data management with server and modify state change
 * Used **axios** for async API calls
-* Use **react-router** for routing
+* Used **react-router** for routing
 * Delay API calls until user stop typing
 * On click of food route to details about food
 * Responsive grid with 3 columns on PC and 2 columns on mobile
